@@ -6,7 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		127AFE2E2FC537F80001862C /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127AFE2D2FC537F80001862C /* WidgetKit.framework */; };
+		127AFE302FC537F80001862C /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 127AFE2F2FC537F80001862C /* SwiftUI.framework */; };
+		127AFE3F2FC537F90001862C /* duo-sync-WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 127AFE2B2FC537F80001862C /* duo-sync-WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		127AFE562FC558CC0001862C /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 127AFE552FC558CC0001862C /* Secrets.xcconfig */; };
+		127AFE572FC558CC0001862C /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 127AFE552FC558CC0001862C /* Secrets.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		127AFE3D2FC537F90001862C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 12CD54A92FBD5550004DC1B3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 127AFE2A2FC537F80001862C;
+			remoteInfo = "duo-sync-WidgetExtension";
+		};
 		12CD54BF2FBD5554004DC1B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 12CD54A92FBD5550004DC1B3 /* Project object */;
@@ -23,15 +38,67 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		127AFE402FC537F90001862C /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				127AFE3F2FC537F90001862C /* duo-sync-WidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		127AFE2B2FC537F80001862C /* duo-sync-WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "duo-sync-WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		127AFE2D2FC537F80001862C /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		127AFE2F2FC537F80001862C /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		127AFE452FC538240001862C /* duo-sync-WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "duo-sync-WidgetExtension.entitlements"; sourceTree = "<group>"; };
+		127AFE552FC558CC0001862C /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		12CD54B12FBD5550004DC1B3 /* duo-sync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "duo-sync.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CD54BE2FBD5554004DC1B3 /* duo-syncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "duo-syncTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12CD54C82FBD5554004DC1B3 /* duo-syncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "duo-syncUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		127AFE432FC537F90001862C /* Exceptions for "duo-sync-Widget" folder in "duo-sync-WidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 127AFE2A2FC537F80001862C /* duo-sync-WidgetExtension */;
+		};
+		127AFE9D2FCFE2DA0001862C /* Exceptions for "duo-sync" folder in "duo-sync" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 12CD54B02FBD5550004DC1B3 /* duo-sync */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		127AFE312FC537F80001862C /* duo-sync-Widget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				127AFE432FC537F90001862C /* Exceptions for "duo-sync-Widget" folder in "duo-sync-WidgetExtension" target */,
+			);
+			path = "duo-sync-Widget";
+			sourceTree = "<group>";
+		};
+		127AFE482FC5396F0001862C /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		12CD54B32FBD5550004DC1B3 /* duo-sync */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				127AFE9D2FCFE2DA0001862C /* Exceptions for "duo-sync" folder in "duo-sync" target */,
+			);
 			path = "duo-sync";
 			sourceTree = "<group>";
 		};
@@ -48,6 +115,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		127AFE282FC537F80001862C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127AFE302FC537F80001862C /* SwiftUI.framework in Frameworks */,
+				127AFE2E2FC537F80001862C /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12CD54AE2FBD5550004DC1B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -72,13 +148,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		127AFE2C2FC537F80001862C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				127AFE2D2FC537F80001862C /* WidgetKit.framework */,
+				127AFE2F2FC537F80001862C /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		12CD54A82FBD5550004DC1B3 = {
 			isa = PBXGroup;
 			children = (
+				127AFE482FC5396F0001862C /* Shared */,
+				127AFE452FC538240001862C /* duo-sync-WidgetExtension.entitlements */,
 				12CD54B32FBD5550004DC1B3 /* duo-sync */,
 				12CD54C12FBD5554004DC1B3 /* duo-syncTests */,
 				12CD54CB2FBD5554004DC1B3 /* duo-syncUITests */,
+				127AFE312FC537F80001862C /* duo-sync-Widget */,
+				127AFE2C2FC537F80001862C /* Frameworks */,
 				12CD54B22FBD5550004DC1B3 /* Products */,
+				127AFE552FC558CC0001862C /* Secrets.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +178,7 @@
 				12CD54B12FBD5550004DC1B3 /* duo-sync.app */,
 				12CD54BE2FBD5554004DC1B3 /* duo-syncTests.xctest */,
 				12CD54C82FBD5554004DC1B3 /* duo-syncUITests.xctest */,
+				127AFE2B2FC537F80001862C /* duo-sync-WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +186,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		127AFE2A2FC537F80001862C /* duo-sync-WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 127AFE442FC537F90001862C /* Build configuration list for PBXNativeTarget "duo-sync-WidgetExtension" */;
+			buildPhases = (
+				127AFE272FC537F80001862C /* Sources */,
+				127AFE282FC537F80001862C /* Frameworks */,
+				127AFE292FC537F80001862C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				127AFE312FC537F80001862C /* duo-sync-Widget */,
+				127AFE482FC5396F0001862C /* Shared */,
+			);
+			name = "duo-sync-WidgetExtension";
+			packageProductDependencies = (
+			);
+			productName = "duo-sync-WidgetExtension";
+			productReference = 127AFE2B2FC537F80001862C /* duo-sync-WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		12CD54B02FBD5550004DC1B3 /* duo-sync */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12CD54D22FBD5554004DC1B3 /* Build configuration list for PBXNativeTarget "duo-sync" */;
@@ -102,12 +216,15 @@
 				12CD54AD2FBD5550004DC1B3 /* Sources */,
 				12CD54AE2FBD5550004DC1B3 /* Frameworks */,
 				12CD54AF2FBD5550004DC1B3 /* Resources */,
+				127AFE402FC537F90001862C /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				127AFE3E2FC537F90001862C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				127AFE482FC5396F0001862C /* Shared */,
 				12CD54B32FBD5550004DC1B3 /* duo-sync */,
 			);
 			name = "duo-sync";
@@ -173,6 +290,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					127AFE2A2FC537F80001862C = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					12CD54B02FBD5550004DC1B3 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -203,15 +323,25 @@
 				12CD54B02FBD5550004DC1B3 /* duo-sync */,
 				12CD54BD2FBD5554004DC1B3 /* duo-syncTests */,
 				12CD54C72FBD5554004DC1B3 /* duo-syncUITests */,
+				127AFE2A2FC537F80001862C /* duo-sync-WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		127AFE292FC537F80001862C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				127AFE562FC558CC0001862C /* Secrets.xcconfig in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12CD54AF2FBD5550004DC1B3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127AFE572FC558CC0001862C /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +362,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		127AFE272FC537F80001862C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12CD54AD2FBD5550004DC1B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -256,6 +393,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		127AFE3E2FC537F90001862C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 127AFE2A2FC537F80001862C /* duo-sync-WidgetExtension */;
+			targetProxy = 127AFE3D2FC537F90001862C /* PBXContainerItemProxy */;
+		};
 		12CD54C02FBD5554004DC1B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 12CD54B02FBD5550004DC1B3 /* duo-sync */;
@@ -269,6 +411,72 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		127AFE412FC537F90001862C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127AFE552FC558CC0001862C /* Secrets.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "duo-sync-WidgetExtension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ZU867K57F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "duo-sync-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "duo-sync-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kkaay.duo-sync.duo-sync-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		127AFE422FC537F90001862C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127AFE552FC558CC0001862C /* Secrets.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "duo-sync-WidgetExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4ZU867K57F;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "duo-sync-Widget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "duo-sync-Widget";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kkaay.duo-sync.duo-sync-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		12CD54D02FBD5554004DC1B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,14 +600,20 @@
 		};
 		12CD54D32FBD5554004DC1B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127AFE552FC558CC0001862C /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "duo-sync/duo-sync.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ZU867K57F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "duo-sync/Info.plist";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -410,8 +624,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "kkaay.duo-sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -424,14 +640,19 @@
 		};
 		12CD54D42FBD5554004DC1B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 127AFE552FC558CC0001862C /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "duo-sync/duo-sync.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4ZU867K57F;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "duo-sync/Info.plist";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,6 +663,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "kkaay.duo-sync";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -541,6 +763,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		127AFE442FC537F90001862C /* Build configuration list for PBXNativeTarget "duo-sync-WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				127AFE412FC537F90001862C /* Debug */,
+				127AFE422FC537F90001862C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		12CD54AC2FBD5550004DC1B3 /* Build configuration list for PBXProject "duo-sync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

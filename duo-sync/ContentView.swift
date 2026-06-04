@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject private var auth: SpotifyAuthManager
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            switch auth.state {
+            case .signedIn:
+                HomeView()
+            default:
+                LoginView()
+            }
         }
-        .padding()
+        .animation(.easeInOut(duration: 0.25), value: auth.state)
     }
 }
 
-#Preview {
+#Preview("Signed Out") {
     ContentView()
+        .environmentObject(SpotifyAuthManager())
+}
+
+#Preview("Signed In (guest)") {
+    let auth = SpotifyAuthManager()
+    auth.signInAsGuest()
+    return ContentView().environmentObject(auth)
 }

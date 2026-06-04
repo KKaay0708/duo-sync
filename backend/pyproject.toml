@@ -1,0 +1,28 @@
+[project]
+name = "duo-sync-backend"
+version = "0.1.0"
+description = "Backend for duo-sync: friending, recommendations, real-time widget push."
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn[standard]>=0.32",
+    "asyncpg>=0.30",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.6",
+    "python-jose[cryptography]>=3.3",
+    "cryptography>=43",
+    "httpx>=0.27",
+    "python-multipart>=0.0.20",
+    "aioapns>=3.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.7",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
