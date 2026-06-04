@@ -35,3 +35,14 @@ class SessionOut(BaseModel):
 
 class DeviceTokenRequest(BaseModel):
     apns_token: str = Field(..., min_length=32, description="Hex APNs device token")
+
+
+class WebPushSubscriptionRequest(BaseModel):
+    endpoint: str = Field(..., description="Browser push service endpoint URL")
+    p256dh: str = Field(..., description="Public key (base64url)")
+    auth: str = Field(..., description="Auth secret (base64url)")
+    user_agent: str | None = None
+
+
+class VapidPublicKeyResponse(BaseModel):
+    public_key: str

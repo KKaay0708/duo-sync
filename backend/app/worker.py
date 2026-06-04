@@ -19,7 +19,7 @@ from dataclasses import dataclass
 
 import httpx
 
-from . import apns, db, spotify
+from . import apns, db, spotify, web_push
 from .config import Settings, get_settings
 from .security import decrypt_token, encrypt_token
 
@@ -147,6 +147,8 @@ async def _poll_user(creds: UserCreds, settings: Settings) -> None:
         #    Requires a paid Apple Developer account ($99/yr) to
         #    generate a .p8 auth key. We soft-fail when missing.
         log.info("user=%s track changed (seq=%s) — Realtime auto-fires", creds.user_id, change_seq)
+
+        # ---------- APNs (iOS, paid account only) --------------------
         tokens = await _device_tokens(creds.user_id)
         if tokens:
             sent = await apns.send_silent_push(
@@ -155,6 +157,30 @@ async def _poll_user(creds: UserCreds, settings: Settings) -> None:
             )
             if sent:
                 log.info("user=%s APNs push delivered to %d device(s)", creds.user_id, sent)
+
+        # ---------- Web Push (PWA / browser, free) -------------------
+        web_subs = await _web_push_subs(creds.user_id)
+        if web_subs and snap is not None:
+            item = snap.get("item") or {}
+            artists = item.get("artists") or []
+            album = item.get("album") or {}
+            images = album.get("images") or []
+            payload = {
+                "title": item.get("name") or "Now playing",
+                "body": ", ".join(a.get("name", "") for a in artists),
+                "icon": images[0]["url"] if images else None,
+                "badge": images[0]["url"] if images else None,
+                "data": {
+                    "seq": change_seq,
+                    "kind": "now_playing",
+                    "user_id": creds.user_id,
+                    "track_name": item.get("name"),
+                    "url": "/",  # what to open when tapped
+                },
+            }
+            sent = await web_push.send_push_to_many(web_subs, payload)
+            if sent:
+                log.info("user=%s WebPush delivered to %d subscription(s)", creds.user_id, sent)
 
 
 async def _fetch_currently_playing(access_token: str) -> dict | None:
@@ -289,3 +315,15 @@ async def _device_tokens(user_id: str) -> list[str]:
             user_id,
         )
     return [r["apns_token"] for r in rows]
+
+
+async def _web_push_subs(user_id: str) -> list[web_push.WebPushSubscription]:
+    async with db.pool().acquire() as conn:
+        rows = await conn.fetch(
+            "select endpoint, p256dh, auth from web_push_subscriptions where user_id = $1",
+            user_id,
+        )
+    return [
+        web_push.WebPushSubscription(endpoint=r["endpoint"], p256dh=r["p256dh"], auth=r["auth"])
+        for r in rows
+    ]

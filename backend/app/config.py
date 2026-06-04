@@ -28,6 +28,11 @@ class Settings(BaseSettings):
     apns_private_key: str = ""
     apns_use_sandbox: bool = True
 
+    # Web Push (PWA / browser notifications)
+    vapid_public_key: str = ""
+    vapid_private_key: str = ""
+    vapid_subject: str = ""
+
     @property
     def is_dev(self) -> bool:
         return self.app_env.lower() == "dev"
@@ -37,6 +42,10 @@ class Settings(BaseSettings):
         return bool(self.apns_key_id) and bool(self.apns_team_id) and (
             bool(self.apns_key_path) or bool(self.apns_private_key)
         )
+
+    @property
+    def web_push_configured(self) -> bool:
+        return bool(self.vapid_public_key) and bool(self.vapid_private_key) and bool(self.vapid_subject)
 
 
 @lru_cache

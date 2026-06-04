@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from . import db, worker
 from .config import get_settings
-from .routes import auth, me
+from .routes import auth, me, web_push as web_push_routes
 
 
 @asynccontextmanager
@@ -51,3 +51,4 @@ async def healthz() -> dict[str, str]:
 
 app.include_router(auth.router)
 app.include_router(me.router)
+app.include_router(web_push_routes.router)
