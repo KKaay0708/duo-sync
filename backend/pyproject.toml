@@ -24,6 +24,13 @@ dev = [
     "ruff>=0.7",
 ]
 
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app", "app.routes"]
+
 [tool.ruff]
 line-length = 100
 target-version = "py311"
