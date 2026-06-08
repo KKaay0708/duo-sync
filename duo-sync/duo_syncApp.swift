@@ -5,8 +5,6 @@
 //  Created by Kaitlyn Kwan on 5/19/26.
 //
 
-// commit again
-
 import SwiftUI
 
 @main
