@@ -5,8 +5,6 @@
 //  Created by Kaitlyn Kwan on 5/19/26.
 //
 
-// comment
-
 import SwiftUI
 
 @main
